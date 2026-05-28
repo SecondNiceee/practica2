@@ -377,15 +377,28 @@ export default function Practica2Page() {
             <p className="text-muted-foreground mt-2">Финальная визуальная композиция</p>
           </div>
 
-          <div className="bg-gradient-to-br from-green-100 to-teal-50 rounded-lg p-4 md:p-8 mb-8">
-            <div className="rounded-lg overflow-hidden shadow-xl">
+          <div className="rounded-lg overflow-hidden shadow-xl mb-8">
+            <div className="relative aspect-[16/9]">
               <Image 
                 src="/images/practica2/banner-main.png" 
-                alt="Рекламный баннер ЭкоГород" 
-                width={1200}
-                height={630}
-                className="w-full h-auto"
+                alt="Фон рекламного баннера ЭкоГород" 
+                fill
+                className="object-cover"
               />
+              <div className="absolute inset-0 flex flex-col items-center justify-center text-center p-4 md:p-8">
+                <h3 className="text-3xl md:text-5xl lg:text-7xl font-bold text-white drop-shadow-[0_4px_8px_rgba(0,0,0,0.5)] mb-2 md:mb-4">
+                  ЭКОГОРОД
+                </h3>
+                <p className="text-xl md:text-3xl lg:text-4xl font-bold text-white drop-shadow-[0_3px_6px_rgba(0,0,0,0.5)] mb-2 md:mb-4">
+                  НЕ БРОСАЙ МУСОР!
+                </p>
+                <p className="text-lg md:text-2xl lg:text-3xl font-semibold text-yellow-300 drop-shadow-[0_3px_6px_rgba(0,0,0,0.6)] mb-2 md:mb-4">
+                  СОХРАНИ ПЛАНЕТУ!
+                </p>
+                <p className="text-sm md:text-lg lg:text-xl text-white/90 italic drop-shadow-[0_2px_4px_rgba(0,0,0,0.5)]">
+                  Чистый город начинается с тебя
+                </p>
+              </div>
             </div>
           </div>
 
