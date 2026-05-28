@@ -268,7 +268,7 @@ export default function Practica2Page() {
             {references.map((ref, i) => (
               <div key={i} className="grid grid-cols-1 lg:grid-cols-3 gap-6 bg-secondary rounded-lg p-4 md:p-6">
                 <div className="aspect-video relative rounded-lg overflow-hidden bg-muted">
-                  <Image src={ref.src} alt={ref.alt} fill className="object-cover" />
+                  <Image src={ref.src} alt={ref.alt} fill className="object-contain" />
                 </div>
                 <div className="lg:col-span-2 space-y-4">
                   <h3 className="font-medium">Референс {i + 1}: {ref.alt.split(": ")[1]}</h3>
@@ -375,12 +375,13 @@ export default function Practica2Page() {
           </div>
 
           <div className="bg-gradient-to-br from-green-100 to-teal-50 rounded-lg p-4 md:p-8 mb-8">
-            <div className="aspect-video relative rounded-lg overflow-hidden shadow-xl">
+            <div className="rounded-lg overflow-hidden shadow-xl">
               <Image 
                 src="/images/practica2/banner-main.png" 
                 alt="Рекламный баннер ЭкоГород" 
-                fill 
-                className="object-cover"
+                width={1200}
+                height={630}
+                className="w-full h-auto"
               />
             </div>
           </div>
