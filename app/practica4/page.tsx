@@ -503,7 +503,7 @@ export default function Practica4Page() {
             <p className="text-teal-950/60 mt-2">Сравнение «до» и «после»: проверка масштаба, контраста и читаемости</p>
           </div>
 
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 mb-10">
             <div className="rounded-lg overflow-hidden border border-teal-100 shadow-sm">
               <div className="bg-amber-100 text-amber-800 text-xs font-medium uppercase tracking-wide px-4 py-2">
                 До — существующая среда
@@ -529,9 +529,76 @@ export default function Practica4Page() {
               />
             </div>
           </div>
+
+          {/* Размещение элементов системы в среде */}
+          <h3 className="text-sm font-medium mb-4">Размещение элементов системы в среде</h3>
+          <div className="relative rounded-lg overflow-hidden border border-teal-100 shadow-sm">
+            <Image
+              src="/images/practica4/metro-after.png"
+              alt="Фотомонтаж: элементы навигационной системы, размещённые в пространстве станции"
+              width={1280}
+              height={720}
+              className="w-full h-auto"
+            />
+            {/* затемнение для читаемости наложенных элементов */}
+            <div className="absolute inset-0 bg-gradient-to-b from-black/30 via-transparent to-black/40" aria-hidden="true" />
+
+            {/* Подвесной путевой указатель — сверху */}
+            <div className="absolute top-3 left-1/2 -translate-x-1/2 w-[min(92%,520px)] bg-teal-700/95 backdrop-blur-sm text-white rounded-md shadow-xl overflow-hidden">
+              <div className="flex items-center justify-between gap-3 px-4 py-2.5 border-b border-white/15">
+                <span className="flex items-center gap-2 text-sm md:text-base font-medium">
+                  <Train className="w-5 h-5" /> Линия 1
+                </span>
+                <span className="flex items-center gap-1.5 text-amber-300 text-sm font-medium">
+                  Платформа <ArrowRight className="w-4 h-4" />
+                </span>
+              </div>
+              <div className="flex items-center justify-between gap-3 px-4 py-2.5">
+                <span className="flex items-center gap-2 text-sm md:text-base font-medium">
+                  <ArrowUpDown className="w-5 h-5" /> Пересадка · Линия 2
+                </span>
+                <span className="flex items-center gap-1.5 text-teal-50/80 text-sm font-medium">
+                  <ArrowRight className="w-4 h-4" />
+                </span>
+              </div>
+            </div>
+
+            {/* Панель «Вы здесь» — слева */}
+            <div className="absolute bottom-3 left-3 w-[min(45%,210px)] bg-[#f8fafc]/95 backdrop-blur-sm rounded-md shadow-xl p-3">
+              <p className="flex items-center gap-1.5 text-xs font-medium text-teal-800 mb-2">
+                <MapPin className="w-4 h-4 text-amber-500" /> Вы здесь
+              </p>
+              {/* цветовая кодировка линий */}
+              <div className="space-y-1.5">
+                <div className="flex items-center gap-2 text-[11px] text-teal-950/80">
+                  <span className="w-6 h-1.5 rounded-full bg-[#14b8a6]" /> Линия 1
+                </div>
+                <div className="flex items-center gap-2 text-[11px] text-teal-950/80">
+                  <span className="w-6 h-1.5 rounded-full bg-[#f59e0b]" /> Линия 2
+                </div>
+                <div className="flex items-center gap-2 text-[11px] text-teal-950/80">
+                  <span className="w-6 h-1.5 rounded-full bg-[#334155]" /> Линия 3
+                </div>
+              </div>
+            </div>
+
+            {/* Лента пиктограмм — снизу справа */}
+            <div className="absolute bottom-3 right-3 flex gap-1.5 bg-teal-700/95 backdrop-blur-sm rounded-md shadow-xl p-2">
+              {[Train, ArrowUpDown, Accessibility, Info, ArrowRight].map((Ic, i) => (
+                <span
+                  key={i}
+                  className="w-9 h-9 flex items-center justify-center rounded bg-white/10 text-white"
+                >
+                  <Ic className="w-5 h-5" />
+                </span>
+              ))}
+            </div>
+          </div>
           <p className="text-sm text-teal-950/60 mt-4 leading-relaxed max-w-3xl">
-            Навигация получает приоритет над рекламой, единый стиль знаков и цветовая кодировка линий снижают визуальный
-            шум. Контраст и крупный кегль обеспечивают читаемость на дистанции и при высокой скорости движения.
+            Элементы из Этапа 5 встроены в реальное пространство: подвесной путевой указатель ведёт к платформе и
+            пересадке, панель «Вы здесь» использует цветовую кодировку линий, лента единых пиктограмм дублирует ключевые
+            функции. Навигация получает приоритет над рекламой, а контраст и крупный кегль обеспечивают читаемость на
+            дистанции и при высокой скорости движения.
           </p>
         </div>
       </section>
