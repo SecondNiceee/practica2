@@ -127,7 +127,7 @@ const modelData = {
 
 // Этап 5 — композиционная сетка (зоны)
 const gridZones = [
-  { zone: "Заголовок", role: "Верхняя зона — тема и коммуникативная задача" },
+  { zone: "Заголовок", role: "Верхняя зона — тема и коммуникативная за��ача" },
   { zone: "Навигация", role: "Линия маршрута и нумерация 1→7 — ведёт взгляд" },
   { zone: "Основные блоки", role: "7 станций-карточек уровней восприятия" },
   { zone: "Пояснения", role: "Подписи: что происходит + пример под каждым уровнем" },
@@ -404,7 +404,7 @@ export default function Practica3Page() {
             <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
               {[
                 { src: "/images/practica3/mood-visual.png", title: "Образный мудборд", description: "Глаз, гештальт, знаки, маршрут, нейроны" },
-                { src: "/images/practica3/mood-color.png", title: "Цветовой мудборд", description: "Синий → янтарный на кремовом фоне" },
+                { src: "/images/practica3/mood-color.png", title: "Цветовой мудборд", description: "Синий → ян��арный на кремовом фоне" },
                 { src: "/images/practica3/mood-typography.png", title: "Типографический мудборд", description: "Геометрический гротеск, чёткая иерархия" },
               ].map((board, i) => (
                 <div key={i} className="space-y-2">
@@ -477,18 +477,89 @@ export default function Practica3Page() {
             </ol>
           </div>
 
-          {/* Сгенерированный слайд-инфографика */}
+          {/* Презентационный слайд 16:9 — собран из элементов маршрута */}
           <h3 className="text-lg font-medium mb-4">Презентационный слайд</h3>
-          <div className="rounded-lg overflow-hidden shadow-2xl border border-blue-100">
-            <Image
-              src="/images/practica3/infographic.png"
-              alt="Инфографика «Уровни визуального восприятия» — маршрут от сенсорного уровня к концептуальной интерпретации"
-              width={1280}
-              height={720}
-              className="w-full h-auto"
-              priority
-            />
+          <div className="rounded-xl overflow-hidden shadow-2xl border border-blue-100">
+            {/* обёртка с горизонтальным скроллом на узких экранах */}
+            <div className="overflow-x-auto bg-gradient-to-br from-[#1e3a8a] via-[#2563eb] to-[#1e3a8a]">
+              <div className="min-w-[860px] aspect-[16/9] flex flex-col p-8 lg:p-10 text-white">
+                {/* Шапка слайда */}
+                <div className="flex items-start justify-between gap-6">
+                  <div>
+                    <span className="text-[11px] font-mono uppercase tracking-widest text-blue-200">
+                      Инфографика
+                    </span>
+                    <h4 className="text-2xl lg:text-3xl font-medium mt-1 text-balance">
+                      Уровни визуального восприятия
+                    </h4>
+                    <p className="text-sm text-blue-100/80 mt-1">
+                      Маршрут зрителя — от вспышки света до собственной идеи
+                    </p>
+                  </div>
+                  <span className="flex-none px-3 py-1 rounded-full bg-amber-500 text-white text-xs font-medium">
+                    Титов Николай ТКБО-02-23
+                  </span>
+                </div>
+
+                {/* Маршрут из 7 станций */}
+                <div className="flex-1 flex items-center">
+                  <div className="relative w-full">
+                    {/* Линия маршрута */}
+                    <div
+                      className="absolute left-0 right-0 top-1/2 -translate-y-1/2 h-0.5 bg-blue-300/40"
+                      aria-hidden="true"
+                    />
+                    {/* Метки старта и финиша на линии */}
+                    <div className="relative flex items-stretch justify-between gap-2">
+                      {levels.map((lvl, i) => {
+                        const accent = i === 0 || i === levels.length - 1
+                        // ступенчатый подъём маршрута
+                        const lift = ["mt-8", "mt-4", "mt-0", "-mt-4", "-mt-8", "-mt-12", "-mt-16"][i]
+                        return (
+                          <div key={lvl.n} className={`flex-1 flex flex-col items-center text-center ${lift}`}>
+                            {/* карточка-подпись */}
+                            <div className="mb-3 px-2">
+                              <p className="text-[11px] font-mono text-blue-200/70">Ур. {lvl.n}</p>
+                              <p className="text-sm font-medium leading-tight">{lvl.title}</p>
+                              <p className="text-[11px] text-amber-300 leading-tight mt-0.5">{lvl.subtitle}</p>
+                            </div>
+                            {/* маркер-станция */}
+                            <div
+                              className={`relative z-10 w-12 h-12 rounded-full flex items-center justify-center shadow-lg ring-4 ring-[#2563eb] ${
+                                accent ? "bg-amber-500" : "bg-white"
+                              }`}
+                            >
+                              <lvl.Icon className={`w-6 h-6 ${accent ? "text-white" : "text-blue-700"}`} />
+                            </div>
+                            {/* номер */}
+                            <span className="mt-2 text-xs font-mono text-blue-100/70">{lvl.n}</span>
+                          </div>
+                        )
+                      })}
+                    </div>
+                  </div>
+                </div>
+
+                {/* Нижняя легенда: старт → финал */}
+                <div className="flex items-center justify-between text-xs">
+                  <span className="inline-flex items-center gap-2 text-amber-300 font-medium">
+                    <Eye className="w-4 h-4" /> Старт: физический свет
+                  </span>
+                  <span className="inline-flex items-center gap-2 text-blue-100/70">
+                    Стимул <ArrowRight className="w-3.5 h-3.5" /> форма <ArrowRight className="w-3.5 h-3.5" /> знак{" "}
+                    <ArrowRight className="w-3.5 h-3.5" /> смысл <ArrowRight className="w-3.5 h-3.5" /> идея
+                  </span>
+                  <span className="inline-flex items-center gap-2 text-amber-300 font-medium">
+                    Финал: личная идея <Lightbulb className="w-4 h-4" />
+                  </span>
+                </div>
+              </div>
+            </div>
           </div>
+          <p className="text-xs text-blue-950/50 mt-3">
+            Слайд собран из тех же графических элементов, что и разбор выше: иконки-пиктограммы, нумерованные
+            маркеры-станции, линия маршрута и янтарные акценты старта и финала.
+          </p>
         </div>
       </section>
 
