@@ -14,6 +14,12 @@ import {
   Sparkles,
   ShieldCheck,
   ArrowRight,
+  Ruler,
+  Gauge,
+  Contrast,
+  ScanEye,
+  CheckCircle2,
+  Minimize2,
 } from "lucide-react"
 
 export const metadata: Metadata = {
@@ -146,6 +152,50 @@ const typography = {
   body: "Тот же гротеск, обычное начертание; высокий контраст для дальней дистанции",
   rule: "Минимум 2 ступени кегля: главное направление крупно, уточнения мельче",
 }
+
+// Этап 6 — проверка восприятия
+const perceptionChecks = [
+  {
+    title: "Масштаб",
+    note: "Размер указателей и кегль подобраны под высоту подвеса и габариты пространства — знаки доминируют над фоном.",
+    Icon: Ruler,
+  },
+  {
+    title: "Читаемость",
+    note: "Крупный гротеск и короткие формулировки считываются мгновенно даже при движении в потоке.",
+    Icon: ScanEye,
+  },
+  {
+    title: "Контраст",
+    note: "Светлый текст на тёмно-бирюзовом фоне и янтарный акцент обеспечивают чёткое отделение от среды.",
+    Icon: Contrast,
+  },
+  {
+    title: "Дистанция восприятия",
+    note: "Указатели читаются с дальней дистанции, уточняющая информация раскрывается по мере приближения.",
+    Icon: Gauge,
+  },
+]
+
+// Этап 6 — коррекция визуального шума и плотности
+const noiseCorrections = [
+  {
+    title: "Отделение рекламы от навигации",
+    note: "Коммерческие модули вынесены в отдельные зоны и не пересекаются с навигационными осями.",
+  },
+  {
+    title: "Снижение плотности информации",
+    note: "На одной панели — только релевантные направления; второстепенное убрано или вынесено на схему.",
+  },
+  {
+    title: "Единый ритм и сетка",
+    note: "Элементы выровнены по общей сетке, единый стиль убирает конкуренцию разнородных табличек.",
+  },
+  {
+    title: "Воздух и паузы",
+    note: "Свободное поле вокруг знаков снижает когнитивную нагрузку и подчёркивает приоритетную информацию.",
+  },
+]
 
 // Этап 7 — выводы
 const conclusions = [
@@ -499,39 +549,14 @@ export default function Practica4Page() {
         <div className="max-w-6xl mx-auto">
           <div className="mb-10">
             <span className="text-xs font-mono text-teal-700/70">Этап 6</span>
-            <h2 className="text-2xl md:text-3xl font-medium mt-1">Визуализация решения в среде</h2>
-            <p className="text-teal-950/60 mt-2">Сравнение «до» и «после»: проверка масштаба, контраста и читаемости</p>
+            <h2 className="text-2xl md:text-3xl font-medium mt-1">Визуализация в контексте среды</h2>
+            <p className="text-teal-950/60 mt-2">
+              Размещение элементов на фотографиях, проверка восприятия и коррекция визуального шума
+            </p>
           </div>
 
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 mb-10">
-            <div className="rounded-lg overflow-hidden border border-teal-100 shadow-sm">
-              <div className="bg-amber-100 text-amber-800 text-xs font-medium uppercase tracking-wide px-4 py-2">
-                До — существующая среда
-              </div>
-              <Image
-                src="/images/practica4/metro-before.png"
-                alt="До: визуально перегруженный вестибюль станции метро"
-                width={1280}
-                height={720}
-                className="w-full h-auto"
-              />
-            </div>
-            <div className="rounded-lg overflow-hidden border border-teal-100 shadow-sm">
-              <div className="bg-teal-700 text-white text-xs font-medium uppercase tracking-wide px-4 py-2">
-                После — единая визуальная система
-              </div>
-              <Image
-                src="/images/practica4/metro-after.png"
-                alt="После: спокойный вестибюль с единой системой навигации и визуальной экологией"
-                width={1280}
-                height={720}
-                className="w-full h-auto"
-              />
-            </div>
-          </div>
-
-          {/* Размещение элементов системы в среде */}
-          <h3 className="text-sm font-medium mb-4">Размещение элементов системы в среде</h3>
+          {/* Размещение элементов системы на фотографии пространства */}
+          <h3 className="text-sm font-medium mb-4">Размещение элементов на фотографии пространства</h3>
           <div className="relative rounded-lg overflow-hidden border border-teal-100 shadow-sm">
             <Image
               src="/images/practica4/metro-after.png"
@@ -597,9 +622,67 @@ export default function Practica4Page() {
           <p className="text-sm text-teal-950/60 mt-4 leading-relaxed max-w-3xl">
             Элементы из Этапа 5 встроены в реальное пространство: подвесной путевой указатель ведёт к платформе и
             пересадке, панель «Вы здесь» использует цветовую кодировку линий, лента единых пиктограмм дублирует ключевые
-            функции. Навигация получает приоритет над рекламой, а контраст и крупный кегль обеспечивают читаемость на
-            дистанции и при высокой скорости движения.
+            функции.
           </p>
+
+          {/* Проверка масштаба, читаемости, контраста, дистанции восприятия */}
+          <h3 className="text-sm font-medium mt-10 mb-4">Проверка восприятия</h3>
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 mb-10">
+            {perceptionChecks.map((c, i) => (
+              <div key={i} className="bg-teal-50 border border-teal-100 rounded-lg p-6">
+                <div className="w-10 h-10 rounded-lg bg-teal-100 flex items-center justify-center mb-3">
+                  <c.Icon className="w-5 h-5 text-teal-700" />
+                </div>
+                <p className="font-medium text-teal-800">{c.title}</p>
+                <p className="text-sm text-teal-950/60 mt-1 leading-relaxed">{c.note}</p>
+              </div>
+            ))}
+          </div>
+
+          {/* Коррекция визуального шума и плотности информации */}
+          <h3 className="text-sm font-medium mb-4 flex items-center gap-2">
+            <Minimize2 className="w-4 h-4 text-teal-700" /> Коррекция визуального шума и плотности информации
+          </h3>
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 mb-10">
+            {noiseCorrections.map((c, i) => (
+              <div key={i} className="flex gap-3 bg-white border border-teal-100 rounded-lg p-4">
+                <CheckCircle2 className="w-5 h-5 text-teal-600 flex-none mt-0.5" />
+                <div>
+                  <p className="font-medium text-teal-800 text-sm">{c.title}</p>
+                  <p className="text-sm text-teal-950/60 mt-1 leading-relaxed">{c.note}</p>
+                </div>
+              </div>
+            ))}
+          </div>
+
+          {/* Сравнение «до» и «после» как итог коррекции */}
+          <h3 className="text-sm font-medium mb-4">Результат коррекции: «до» и «после»</h3>
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
+            <div className="rounded-lg overflow-hidden border border-teal-100 shadow-sm">
+              <div className="bg-amber-100 text-amber-800 text-xs font-medium uppercase tracking-wide px-4 py-2">
+                До — визуальный шум и высокая плотность
+              </div>
+              <Image
+                src="/images/practica4/metro-before.png"
+                alt="До: визуально перегруженный вестибюль станции метро"
+                width={1280}
+                height={720}
+                className="w-full h-auto"
+              />
+            </div>
+            <div className="rounded-lg overflow-hidden border border-teal-100 shadow-sm">
+              <div className="bg-teal-700 text-white text-xs font-medium uppercase tracking-wide px-4 py-2">
+                После — упорядоченная среда и приоритет навигации
+              </div>
+              <Image
+                src="/images/practica4/metro-after.png"
+                alt="После: спокойный вестибюль с единой системой навигации и визуальной экологией"
+                width={1280}
+                height={720}
+                className="w-full h-auto"
+              />
+            </div>
+          </div>
         </div>
       </section>
 
