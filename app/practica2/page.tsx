@@ -1,7 +1,6 @@
 import Image from "next/image"
 import type { Metadata } from "next"
-import { EcoBanner } from "@/components/eco-banner"
-import { EcoBannerMinimal } from "@/components/eco-banner-minimal"
+import { StreetBanner } from "@/components/street-banner"
 
 export const metadata: Metadata = {
   title: "Практическая работа №2 — Визуальные коды в рекламе",
@@ -249,7 +248,7 @@ export default function Practica2Page() {
             </div>
 
             <div className="bg-green-50 rounded-lg p-5">
-              <h3 className="text-xs font-medium text-green-600 uppercase mb-3">Понятные визуальные коды</h3>
+              <h3 className="text-xs font-medium text-green-600 uppercase mb-3">Понятные визуаль��ые коды</h3>
               <ul className="text-sm space-y-1">
                 {targetAudience.visualCodes.map((item, i) => (
                   <li key={i}>{item}</li>
@@ -371,39 +370,33 @@ export default function Practica2Page() {
       </section>
 
       {/* Stage 5: Banner Development */}
-      <section id="stage5" className="py-16 px-4 border-b border-border bg-[#0a0a0a]">
-        <div className="max-w-7xl mx-auto">
+      <section id="stage5" className="py-16 px-4 border-b border-border">
+        <div className="max-w-6xl mx-auto">
           <div className="mb-10">
-            <span className="text-xs font-mono text-green-400/70">Этап 5</span>
-            <h2 className="text-2xl md:text-3xl font-medium mt-1 text-white">Разработка рекламного баннера</h2>
-            <p className="text-white/50 mt-2">Финальная визуальная композиция</p>
+            <span className="text-xs font-mono text-muted-foreground">Этап 5</span>
+            <h2 className="text-2xl md:text-3xl font-medium mt-1">Разработка рекламного баннера</h2>
+            <p className="text-muted-foreground mt-2">Финальная визуальная композиция для наружной рекламы</p>
           </div>
 
-          {/* New Stylish Banner */}
-          <EcoBanner />
-
-          {/* Alternative Banner Style */}
-          <div className="mt-12">
-            <h3 className="text-lg font-medium text-white/80 mb-4">Альтернативный вариант (светлая тема)</h3>
-            <EcoBannerMinimal />
-          </div>
+          {/* Street Billboard Banner */}
+          <StreetBanner />
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 mt-10">
-            <div className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-xl p-5">
-              <h3 className="text-xs font-medium text-green-400 uppercase mb-3">Визуальный образ</h3>
-              <p className="text-sm text-white/70">Символ переработки из листьев, городской пейзаж с деревьями, летящие птицы на зелёном градиентном фоне</p>
+            <div className="bg-secondary rounded-lg p-5">
+              <h3 className="text-xs font-medium text-muted-foreground uppercase mb-3">Визуальный образ</h3>
+              <p className="text-sm">Символ переработки из листьев, городской пейзаж с деревьями, летящие птицы на зелёном градиентном фоне</p>
             </div>
-            <div className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-xl p-5">
-              <h3 className="text-xs font-medium text-green-400 uppercase mb-3">Заголовок</h3>
-              <p className="text-sm text-white/70">ЭкоГород — название инициативы + слоган о личном вкладе каждого</p>
+            <div className="bg-secondary rounded-lg p-5">
+              <h3 className="text-xs font-medium text-muted-foreground uppercase mb-3">Заголовок</h3>
+              <p className="text-sm">ЭкоГород — название инициативы + слоган о личном вкладе каждого</p>
             </div>
-            <div className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-xl p-5">
-              <h3 className="text-xs font-medium text-green-400 uppercase mb-3">Графические элементы</h3>
-              <p className="text-sm text-white/70">Природные формы, символы переработки, контейнеры, велосипед, деревья</p>
+            <div className="bg-secondary rounded-lg p-5">
+              <h3 className="text-xs font-medium text-muted-foreground uppercase mb-3">Графические элементы</h3>
+              <p className="text-sm">Природные формы, символы переработки, контейнеры, велосипед, деревья</p>
             </div>
-            <div className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-xl p-5">
-              <h3 className="text-xs font-medium text-green-400 uppercase mb-3">Композиция</h3>
-              <p className="text-sm text-white/70">Динамичная, призывающая к действию, с чёткой визуальной иерархией</p>
+            <div className="bg-secondary rounded-lg p-5">
+              <h3 className="text-xs font-medium text-muted-foreground uppercase mb-3">Композиция</h3>
+              <p className="text-sm">Динамичная, призывающая к действию, с чёткой визуальной иерархией</p>
             </div>
           </div>
         </div>
