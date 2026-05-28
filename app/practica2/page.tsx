@@ -1,6 +1,5 @@
 import Image from "next/image"
 import type { Metadata } from "next"
-import { StreetBanner } from "@/components/street-banner"
 
 export const metadata: Metadata = {
   title: "Практическая работа №2 — Визуальные коды в рекламе",
@@ -165,7 +164,7 @@ export default function Practica2Page() {
           <div className="mb-10">
             <span className="text-xs font-mono text-muted-foreground">Этап 1</span>
             <h2 className="text-2xl md:text-3xl font-medium mt-1">Выбор темы рекламной коммуникации</h2>
-            <p className="text-muted-foreground mt-2">Определение объекта рекламы и ключевых параметров</p>
+            <p className="text-muted-foreground mt-2">Определение объекта рекламы и ключевых параметро��</p>
           </div>
 
           <div className="bg-green-50 rounded-lg p-6 md:p-8">
@@ -378,8 +377,17 @@ export default function Practica2Page() {
             <p className="text-muted-foreground mt-2">Финальная визуальная композиция для наружной рекламы</p>
           </div>
 
-          {/* Street Billboard Banner */}
-          <StreetBanner />
+          {/* Generated Banner Image */}
+          <div className="rounded-lg overflow-hidden shadow-2xl">
+            <Image 
+              src="/images/practica2/eco-banner.png" 
+              alt="Рекламный баннер ЭкоГород - уличная реклама экологической акции" 
+              width={1200}
+              height={400}
+              className="w-full h-auto"
+              priority
+            />
+          </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 mt-10">
             <div className="bg-secondary rounded-lg p-5">
