@@ -139,6 +139,9 @@ export default function Practica2Page() {
           <span className="text-xs font-mono text-muted-foreground uppercase tracking-widest">
             Практическое занятие №2
           </span>
+          <span className="inline-block mt-3 px-3 py-1 bg-secondary text-secondary-foreground rounded-full text-sm font-medium">
+            Титов Николай ТКБО-02-23
+          </span>
           <h1 className="text-3xl md:text-5xl lg:text-6xl font-medium tracking-tight mt-4 mb-6 text-balance">
             Визуальные коды и символы в рекламной коммуникации
           </h1>
