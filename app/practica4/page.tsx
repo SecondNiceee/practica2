@@ -62,41 +62,100 @@ const problems = [
   },
 ]
 
+// Цель и задачи работы
+const workGoal =
+  "Сформировать понимание городской среды как коммуникативной системы и научиться проектировать визуальные решения с учётом социокультурного контекста."
+
+const workTasks = [
+  "Изучить особенности восприятия информации в публичном пространстве: скорость, дистанцию, уровень внимания, визуальный шум.",
+  "Проанализировать социальный, культурный и функциональный контекст выбранной локации.",
+  "Определить коммуникативные задачи пространства: навигацию, информирование, образ места, эмоциональное воздействие.",
+  "Освоить принципы визуальной экологии и борьбы с агрессивной визуальной средой.",
+  "Разработать концепцию визуальной системы, согласованной с архитектурой и идентичностью места.",
+  "Проектировать элементы городской визуальной коммуникации как целостную систему, а не отдельные объекты.",
+  "Сформировать навыки презентации и аргументации проектных решений.",
+]
+
+// навигация по этапам
+const stageNav = [
+  { id: "goal", label: "Цель" },
+  { id: "stage1", label: "1. Анализ" },
+  { id: "stage2", label: "2. Аудитория" },
+  { id: "stage3", label: "3. Задачи" },
+  { id: "stage4", label: "4. Концепция" },
+  { id: "stage5", label: "5. Элементы" },
+  { id: "stage6", label: "6. Среда" },
+  { id: "stage7", label: "7. Выводы" },
+]
+
 // Этап 2 — аудитория (таблица 1)
 const audience = [
   {
     group: "Ежедневные пассажиры",
     goal: "Быстро пройти транзитом / на пересадку",
     speed: "Очень высокая",
+    attention: "Низкий — внимание рассеяно",
+    emotion: "Спешка, автоматизм",
     need: "Мгновенно читаемые указатели направлений и выходов",
   },
   {
     group: "Приезжие и туристы",
     goal: "Сориентироваться в незнакомом узле",
     speed: "Средняя",
+    attention: "Высокий — активный поиск",
+    emotion: "Интерес, лёгкая тревога",
     need: "Схемы, нумерация выходов, понятные пиктограммы без языка",
   },
   {
     group: "Маломобильные пассажиры",
     goal: "Найти лифт, пандус, безбарьерный маршрут",
     speed: "Низкая",
+    attention: "Средний — целевой поиск",
+    emotion: "Настороженность, усталость",
     need: "Контраст, тактильные элементы, доступная высота знаков",
   },
   {
     group: "Пожилые люди",
     goal: "Спокойно дойти без стресса",
     speed: "Низкая",
+    attention: "Средний — нужна опора",
+    emotion: "Осторожность, утомление",
     need: "Крупный кегль, высокая читаемость, отсутствие визуального шума",
   },
 ]
 
 // Этап 2 — сценарий использования (таблица 2)
 const scenario = [
-  { step: "Вход", action: "Пассажир спускается в вестибюль", info: "Идентификация станции, схема линий, направление к турникетам" },
-  { step: "Ориентация", action: "Выбирает линию или выход", info: "Цветовая кодировка линий, крупные указатели направлений" },
-  { step: "Движение", action: "Идёт по коридорам и переходам", info: "Подтверждающие знаки на развилках, нумерация выходов" },
-  { step: "Пребывание", action: "Ждёт поезд на платформе", info: "Табло прибытия, название станции, безопасная зона у края" },
-  { step: "Выход", action: "Поднимается в город", info: "Указатели улиц и ориентиров, схема окрестностей" },
+  {
+    step: "Вход",
+    action: "Пассажир спускается в вестибюль",
+    need: "Понять структуру места",
+    solution: "Идентификация станции, схема линий, крупный указатель к турникетам",
+  },
+  {
+    step: "Ориентация",
+    action: "Выбирает линию или выход",
+    need: "Быстро считать информацию",
+    solution: "Цветовая кодировка линий, крупные указатели направлений",
+  },
+  {
+    step: "Движение",
+    action: "Идёт по коридорам и переходам",
+    need: "Не терять маршрут",
+    solution: "Подтверждающие знаки на развилках, нумерация выходов, пиктограммы",
+  },
+  {
+    step: "Пребывание",
+    action: "Ждёт поезд на платформе",
+    need: "Комфорт и информирование",
+    solution: "Табло прибытия, название станции, безопасная зона у края",
+  },
+  {
+    step: "Выход",
+    action: "Поднимается в город",
+    need: "Найти выход быстро",
+    solution: "Контрастные указатели улиц и ориентиров, схема окрестностей",
+  },
 ]
 
 // Этап 3 — коммуникативные задачи
@@ -241,8 +300,64 @@ export default function Practica4Page() {
         </div>
       </section>
 
+      {/* Навигация по этапам */}
+      <nav
+        aria-label="Навигация по этапам"
+        className="sticky top-0 z-30 border-b border-teal-100 bg-[#f8fafc]/90 backdrop-blur-sm"
+      >
+        <div className="max-w-6xl mx-auto px-4">
+          <ul className="flex gap-1 overflow-x-auto py-3 text-sm">
+            {stageNav.map((s) => (
+              <li key={s.id} className="flex-none">
+                <a
+                  href={`#${s.id}`}
+                  className="block px-3 py-1.5 rounded-full text-teal-900/70 hover:bg-teal-100 hover:text-teal-800 transition-colors whitespace-nowrap"
+                >
+                  {s.label}
+                </a>
+              </li>
+            ))}
+          </ul>
+        </div>
+      </nav>
+
+      {/* Цель и задачи */}
+      <section id="goal" className="scroll-mt-16 py-16 px-4 border-b border-teal-100">
+        <div className="max-w-6xl mx-auto">
+          <div className="mb-10">
+            <span className="text-xs font-mono text-teal-700/70">Цель работы</span>
+            <h2 className="text-2xl md:text-3xl font-medium mt-1 text-balance">
+              Городская среда как коммуникативная система
+            </h2>
+          </div>
+
+          <div className="grid grid-cols-1 lg:grid-cols-5 gap-6">
+            <div className="lg:col-span-2 bg-teal-700 text-white rounded-lg p-6 md:p-8 flex flex-col justify-center">
+              <Compass className="w-8 h-8 mb-4 text-amber-300" />
+              <p className="text-lg leading-relaxed text-pretty">{workGoal}</p>
+            </div>
+            <div className="lg:col-span-3">
+              <h3 className="text-sm font-medium mb-4">Задачи</h3>
+              <ul className="grid grid-cols-1 sm:grid-cols-2 gap-3">
+                {workTasks.map((t, i) => (
+                  <li
+                    key={i}
+                    className="flex gap-3 text-sm bg-white border border-teal-100 rounded-lg p-4 leading-relaxed"
+                  >
+                    <span className="flex-none w-6 h-6 rounded-full bg-teal-100 text-teal-700 text-xs font-medium flex items-center justify-center">
+                      {i + 1}
+                    </span>
+                    <span>{t}</span>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* Этап 1 */}
-      <section id="stage1" className="py-16 px-4 border-b border-teal-100">
+      <section id="stage1" className="scroll-mt-16 py-16 px-4 border-b border-teal-100">
         <div className="max-w-6xl mx-auto">
           <div className="mb-10">
             <span className="text-xs font-mono text-teal-700/70">Этап 1</span>
@@ -314,7 +429,7 @@ export default function Practica4Page() {
       </section>
 
       {/* Этап 2 */}
-      <section id="stage2" className="py-16 px-4 border-b border-teal-100 bg-white">
+      <section id="stage2" className="scroll-mt-16 py-16 px-4 border-b border-teal-100 bg-white">
         <div className="max-w-6xl mx-auto">
           <div className="mb-10">
             <span className="text-xs font-mono text-teal-700/70">Этап 2</span>
@@ -325,12 +440,14 @@ export default function Practica4Page() {
           {/* Таблица 1 — аудитория */}
           <h3 className="text-sm font-medium mb-4">Таблица 1. Целевые группы</h3>
           <div className="overflow-x-auto mb-10 rounded-lg border border-teal-100">
-            <table className="w-full text-sm min-w-[640px]">
+            <table className="w-full text-sm min-w-[880px]">
               <thead>
                 <tr className="bg-teal-700 text-white text-left">
                   <th className="p-4 font-medium">Группа</th>
                   <th className="p-4 font-medium">Цель</th>
                   <th className="p-4 font-medium">Скорость</th>
+                  <th className="p-4 font-medium">Уровень внимания</th>
+                  <th className="p-4 font-medium">Эмоц. состояние</th>
                   <th className="p-4 font-medium">Ключевая потребность</th>
                 </tr>
               </thead>
@@ -340,6 +457,8 @@ export default function Practica4Page() {
                     <td className="p-4 font-medium text-teal-800">{a.group}</td>
                     <td className="p-4 text-teal-950/80">{a.goal}</td>
                     <td className="p-4 text-teal-950/80">{a.speed}</td>
+                    <td className="p-4 text-teal-950/80">{a.attention}</td>
+                    <td className="p-4 text-teal-950/80">{a.emotion}</td>
                     <td className="p-4 text-teal-950/80">{a.need}</td>
                   </tr>
                 ))}
@@ -350,12 +469,13 @@ export default function Practica4Page() {
           {/* Таблица 2 — сценарий */}
           <h3 className="text-sm font-medium mb-4">Таблица 2. Сценарий пути пассажира</h3>
           <div className="overflow-x-auto rounded-lg border border-teal-100">
-            <table className="w-full text-sm min-w-[640px]">
+            <table className="w-full text-sm min-w-[760px]">
               <thead>
                 <tr className="bg-teal-700 text-white text-left">
-                  <th className="p-4 font-medium">Шаг</th>
-                  <th className="p-4 font-medium">Действие пассажира</th>
-                  <th className="p-4 font-medium">Какая информация нужна</th>
+                  <th className="p-4 font-medium">Этап сценария</th>
+                  <th className="p-4 font-medium">Действие пользователя</th>
+                  <th className="p-4 font-medium">Потребность</th>
+                  <th className="p-4 font-medium">Возможное визуальное решение</th>
                 </tr>
               </thead>
               <tbody>
@@ -365,7 +485,8 @@ export default function Practica4Page() {
                       {i + 1}. {s.step}
                     </td>
                     <td className="p-4 text-teal-950/80">{s.action}</td>
-                    <td className="p-4 text-teal-950/80">{s.info}</td>
+                    <td className="p-4 text-teal-950/80">{s.need}</td>
+                    <td className="p-4 text-teal-950/80">{s.solution}</td>
                   </tr>
                 ))}
               </tbody>
@@ -375,7 +496,7 @@ export default function Practica4Page() {
       </section>
 
       {/* Этап 3 */}
-      <section id="stage3" className="py-16 px-4 border-b border-teal-100">
+      <section id="stage3" className="scroll-mt-16 py-16 px-4 border-b border-teal-100">
         <div className="max-w-6xl mx-auto">
           <div className="mb-10">
             <span className="text-xs font-mono text-teal-700/70">Этап 3</span>
@@ -398,7 +519,7 @@ export default function Practica4Page() {
       </section>
 
       {/* Этап 4 */}
-      <section id="stage4" className="py-16 px-4 border-b border-teal-100 bg-white">
+      <section id="stage4" className="scroll-mt-16 py-16 px-4 border-b border-teal-100 bg-white">
         <div className="max-w-6xl mx-auto">
           <div className="mb-10">
             <span className="text-xs font-mono text-teal-700/70">Этап 4</span>
@@ -457,7 +578,7 @@ export default function Practica4Page() {
       </section>
 
       {/* Этап 5 */}
-      <section id="stage5" className="py-16 px-4 border-b border-teal-100">
+      <section id="stage5" className="scroll-mt-16 py-16 px-4 border-b border-teal-100">
         <div className="max-w-6xl mx-auto">
           <div className="mb-10">
             <span className="text-xs font-mono text-teal-700/70">Этап 5</span>
@@ -545,7 +666,7 @@ export default function Practica4Page() {
       </section>
 
       {/* Этап 6 */}
-      <section id="stage6" className="py-16 px-4 border-b border-teal-100 bg-white">
+      <section id="stage6" className="scroll-mt-16 py-16 px-4 border-b border-teal-100 bg-white">
         <div className="max-w-6xl mx-auto">
           <div className="mb-10">
             <span className="text-xs font-mono text-teal-700/70">Этап 6</span>
@@ -695,7 +816,7 @@ export default function Practica4Page() {
       </section>
 
       {/* Этап 7 */}
-      <section id="stage7" className="py-16 px-4 bg-gradient-to-b from-[#f8fafc] to-teal-50">
+      <section id="stage7" className="scroll-mt-16 py-16 px-4 bg-gradient-to-b from-[#f8fafc] to-teal-50">
         <div className="max-w-6xl mx-auto">
           <div className="mb-10">
             <span className="text-xs font-mono text-teal-700/70">Этап 7</span>
