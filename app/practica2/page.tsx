@@ -3,138 +3,138 @@ import type { Metadata } from "next"
 
 export const metadata: Metadata = {
   title: "Практическая работа №2 — Визуальные коды в рекламе",
-  description: "Визуальные коды и символы в рекламной коммуникации: приложение для медитации ZenMind",
+  description: "Визуальные коды и символы в рекламной коммуникации: экологическая акция ЭкоГород",
 }
 
 // Data for the project
 const projectData = {
-  name: "ZenMind",
-  type: "Мобильное приложение для медитации и осознанности",
-  goal: "Привлечение новых пользователей к приложению, формирование образа продукта как надёжного помощника в достижении внутреннего покоя и баланса",
-  idea: "Технологии на службе ментального здоровья — цифровой проводник к гармонии",
-  message: "Найди свой внутренний покой с ZenMind — твой персональный путь к осознанности",
+  name: "ЭкоГород",
+  type: "Городская экологическая акция по раздельному сбору отходов и озеленению",
+  goal: "Привлечение жителей города к участию в экологических инициативах, формирование ответственного отношения к окружающей среде и популяризация раздельного сбора мусора",
+  idea: "Каждый житель — часть большого экологического движения. Маленькие действия создают большие перемены",
+  message: "Чистый город начинается с тебя — присоединяйся к ЭкоГороду!",
 }
 
 const targetAudience = {
-  age: "25-45 лет",
-  occupation: "Офисные работники, IT-специалисты, предприниматели, фрилансеры",
+  age: "18-45 лет",
+  occupation: "Студенты, молодые семьи, офисные работники, активные горожане",
   interests: [
-    "Саморазвитие и личностный рост",
+    "Экология и защита окружающей среды",
     "Здоровый образ жизни",
-    "Психология и ментальное здоровье",
-    "Технологии и приложения",
-    "Йога и wellness-практики",
+    "Городские инициативы и волонтёрство",
+    "Осознанное потребление",
+    "Активный отдых на природе",
   ],
   values: [
-    "Баланс между работой и личной жизнью",
-    "Осознанность и присутствие в моменте",
-    "Забота о себе и своём здоровье",
-    "Эффективность и продуктивность",
+    "Забота о будущем планеты",
+    "Ответственность перед обществом",
+    "Устойчивое развитие",
+    "Чистота и порядок в городе",
   ],
   visualPreferences: [
-    "Минималистичный дизайн",
-    "Спокойные, природные цвета",
-    "Чистая типографика",
-    "Качественные изображения",
-    "Apple-style эстетика",
+    "Яркие, свежие цвета",
+    "Природные образы",
+    "Дружелюбная графика",
+    "Понятные инфографики",
+    "Позитивный, вдохновляющий стиль",
   ],
   mediaEnvironment: [
-    "Instagram и Pinterest",
-    "YouTube (wellness-контент)",
-    "Подкасты о саморазвитии",
-    "App Store и Google Play",
+    "Социальные сети (VK, Telegram)",
+    "Городские информационные порталы",
+    "Наружная реклама",
+    "Мероприятия и фестивали",
   ],
   visualCodes: [
-    "Лотос — символ духовного роста",
-    "Градиенты — плавность и переход состояний",
-    "Природные элементы — связь с природой",
-    "Геометрия — структура и баланс",
-    "Мягкий свет — умиротворение",
+    "Зелёный цвет — природа, экология",
+    "Символ переработки — осознанность",
+    "Деревья и листья — рост, жизнь",
+    "Руки — участие, забота",
+    "Земной шар — глобальность проблемы",
   ],
 }
 
 const references = [
   {
     src: "/images/practica2/references/ref-1.png",
-    alt: "Референс 1: Медитация на рассвете",
-    icons: "Силуэт человека в позе лотоса, горы, солнце",
-    indexes: "Восходящее солнце → начало нового дня, путь вверх → развитие",
-    symbols: "Горы — преодоление, солнце — просветление, поза лотоса — медитация",
+    alt: "Референс 1: Экологическая акция Чистый Лес",
+    icons: "Дерево, велосипед, птицы, солнце, ели, символ переработки",
+    indexes: "Велосипед → экологичный транспорт, птицы → свобода и чистый воздух, солнце → позитивное будущее",
+    symbols: "Зелёный цвет — экология, геометрические формы — структурированность действий, лес — природа, которую защищаем",
   },
   {
     src: "/images/practica2/references/ref-2.png",
-    alt: "Референс 2: Абстрактная иллюстрация",
-    icons: "Человеческая фигура, органические формы, растения",
-    indexes: "Обволакивающие формы → защита, плавные линии → расслабление",
-    symbols: "Круг — целостность, природные формы — естественность, пастель — мягкость",
+    alt: "Референс 2: Экологический фестиваль ЭКОБУМ",
+    icons: "Контейнер для переработки, стопки макулатуры, листья, электроника, руки",
+    indexes: "Стопки бумаги → результат сбора, зелёный контейнер → место сдачи, цветные блоки → разнообразие активностей",
+    symbols: "Символ переработки — цикличность, зелёный фон — природа, листья — экологичность, руки с сердцем — забота",
   },
   {
     src: "/images/practica2/references/ref-3.png",
-    alt: "Референс 3: Премиальный wellness",
-    icons: "Силуэт в йога-позе, световые акценты",
-    indexes: "Тёмный фон → глубина, золотой свет → ценность",
-    symbols: "Золото — премиальность, тьма — внутренний мир, свет — осознанность",
+    alt: "Референс 3: Раздели мусор — Спаси планету",
+    icons: "Земной шар с улыбкой, три контейнера разных цветов, бутылки, бумага, листья",
+    indexes: "Улыбка Земли → позитивный результат действий, разноцветные контейнеры → сортировка по типам",
+    symbols: "Синий/зелёный/жёлтый контейнеры — разные типы отходов, Земля — глобальная ответственность, листья — природа",
   },
 ]
 
 const visualConcept = {
-  idea: "Цифровой портал к внутреннему покою — приложение как мост между технологиями и духовностью",
-  metaphor: "Лотос, раскрывающийся в цифровом пространстве — духовный рост через современные технологии",
+  idea: "Город как живой организм — каждый житель вносит вклад в его здоровье через экологические действия",
+  metaphor: "Зелёные ростки, пробивающиеся сквозь городской пейзаж — символ возрождения природы через усилия людей",
   palette: [
-    { color: "#4338ca", name: "Индиго", meaning: "Глубина, мудрость, интуиция" },
-    { color: "#a78bfa", name: "Лаванда", meaning: "Спокойствие, духовность" },
-    { color: "#86efac", name: "Мятный", meaning: "Свежесть, обновление" },
+    { color: "#22c55e", name: "Изумрудный", meaning: "Природа, рост, экология" },
+    { color: "#14b8a6", name: "Бирюзовый", meaning: "Свежесть, чистота воды" },
+    { color: "#38bdf8", name: "Небесный", meaning: "Чистый воздух, надежда" },
+    { color: "#84cc16", name: "Лаймовый", meaning: "Энергия, молодость" },
     { color: "#fefce8", name: "Кремовый", meaning: "Чистота, простота" },
-    { color: "#7dd3fc", name: "Небесный", meaning: "Лёгкость, свобода" },
   ],
-  typography: "Современный геометрический гротеск (Inter, SF Pro) — чистота, технологичность, читаемость",
-  composition: "Центрированная, симметричная композиция с акцентом на главном образе. Много воздуха, минимализм.",
+  typography: "Современный геометрический гротеск (Inter, Montserrat) — дружелюбность, читаемость, современность",
+  composition: "Динамичная композиция с природными элементами. Акцент на призыве к действию и позитивных образах.",
 }
 
 const bannerElements = [
   {
-    element: "Лотос",
-    description: "Стилизованный минималистичный цветок лотоса в центре композиции",
-    associations: "Духовное пробуждение, чистота, рост из тьмы к свету",
-    signType: "Символический знак — культурный код медитации и духовного развития",
+    element: "Символ переработки из листьев",
+    description: "Классический символ recycling, стилизованный под природные листья",
+    associations: "Цикличность природы, возобновляемость ресурсов, единство экологии и действия",
+    signType: "Символический знак — универсальный код переработки, усиленный природной метафорой",
   },
   {
-    element: "Градиент индиго-лаванда",
-    description: "Плавный переход от тёмного индиго к светлой лаванде",
-    associations: "Переход от стресса к покою, от хаоса к гармонии",
-    signType: "Индексальный знак — визуальное указание на трансформацию состояния",
+    element: "Зелёный градиент",
+    description: "Плавный переход от изумрудного к бирюзовому",
+    associations: "Природа, свежесть, чистота, здоровье окружающей среды",
+    signType: "Индексальный знак — визуальное указание на экологическую тематику",
   },
   {
-    element: "Силуэт медитирующего",
-    description: "Человек в позе лотоса, погружённый в медитацию",
-    associations: "Практика медитации, внутренний фокус, отрешённость",
-    signType: "Иконический знак — прямое изображение целевого действия",
+    element: "Силуэт города с деревьями",
+    description: "Городской пейзаж, интегрированный с зелёными насаждениями",
+    associations: "Гармония города и природы, озеленение, устойчивое развитие",
+    signType: "Иконический знак — прямое изображение цели акции",
   },
   {
-    element: "Световые частицы",
-    description: "Плавающие точки света вокруг центрального образа",
-    associations: "Энергия, осознанность, пробуждение",
-    signType: "Индексальный знак — указание на нематериальное, духовное",
+    element: "Птицы в небе",
+    description: "Летящие птицы над городом",
+    associations: "Свобода, чистый воздух, здоровая экосистема",
+    signType: "Индексальный знак — указание на результат экологических действий",
   },
   {
-    element: "Название ZenMind",
-    description: "Логотип приложения в чистой типографике",
-    associations: "Zen — дзен, спокойствие; Mind — разум, осознанность",
-    signType: "Символический знак — вербальный код бренда",
+    element: "Название ЭкоГород",
+    description: "Логотип акции в современной типографике",
+    associations: "Эко — экология; Город — локальность, сообщество",
+    signType: "Символический знак — вербальный код бренда экологической инициативы",
   },
 ]
 
 const moodboards = [
-  { src: "/images/practica2/moodboards/visual.png", title: "Образный мудборд", description: "Визуальные образы: природа, медитация, покой" },
-  { src: "/images/practica2/moodboards/color.png", title: "Цветовой мудборд", description: "Палитра: индиго, лаванда, мятный, кремовый" },
-  { src: "/images/practica2/moodboards/typography.png", title: "Типографический мудборд", description: "Шрифты: геометрический гротеск, лёгкость" },
+  { src: "/images/practica2/moodboards/visual.png", title: "Образный мудборд", description: "Визуальные образы: природа, переработка, городская экология" },
+  { src: "/images/practica2/moodboards/color.png", title: "Цветовой мудборд", description: "Палитра: изумрудный, бирюзовый, небесный, лаймовый" },
+  { src: "/images/practica2/moodboards/typography.png", title: "Типографический мудборд", description: "Шрифты: современный гротеск, дружелюбность" },
 ]
 
 export default function Practica2Page() {
   return (
     <main className="min-h-screen">
       {/* Hero Section */}
-      <section className="min-h-[70vh] flex items-center justify-center px-4 py-16 border-b border-border bg-gradient-to-b from-indigo-50/50 to-background">
+      <section className="min-h-[70vh] flex items-center justify-center px-4 py-16 border-b border-border bg-gradient-to-b from-green-50/50 to-background">
         <div className="max-w-4xl mx-auto text-center">
           <span className="text-xs font-mono text-muted-foreground uppercase tracking-widest">
             Практическое занятие №2
@@ -143,14 +143,14 @@ export default function Practica2Page() {
             Визуальные коды и символы в рекламной коммуникации
           </h1>
           <div className="flex items-center justify-center gap-3 mb-8">
-            <span className="px-4 py-2 bg-indigo-100 text-indigo-700 rounded-full font-medium">
-              ZenMind
+            <span className="px-4 py-2 bg-green-100 text-green-700 rounded-full font-medium">
+              ЭкоГород
             </span>
             <span className="text-muted-foreground">—</span>
-            <span className="text-muted-foreground">Приложение для медитации</span>
+            <span className="text-muted-foreground">Экологическая акция</span>
           </div>
           <p className="text-muted-foreground max-w-2xl mx-auto leading-relaxed">
-            Разработка рекламного баннера для цифрового продукта с применением семиотического анализа визуальных знаков
+            Разработка рекламного баннера для городской экологической инициативы с применением семиотического анализа визуальных знаков
           </p>
         </div>
       </section>
@@ -164,14 +164,14 @@ export default function Practica2Page() {
             <p className="text-muted-foreground mt-2">Определение объекта рекламы и ключевых параметров</p>
           </div>
 
-          <div className="bg-indigo-50 rounded-lg p-6 md:p-8">
+          <div className="bg-green-50 rounded-lg p-6 md:p-8">
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
               <div>
-                <h3 className="text-xs font-medium text-muted-foreground uppercase mb-2">Название продукта</h3>
-                <p className="text-xl font-medium text-indigo-700">{projectData.name}</p>
+                <h3 className="text-xs font-medium text-muted-foreground uppercase mb-2">Название проекта</h3>
+                <p className="text-xl font-medium text-green-700">{projectData.name}</p>
               </div>
               <div>
-                <h3 className="text-xs font-medium text-muted-foreground uppercase mb-2">Тип продукта</h3>
+                <h3 className="text-xs font-medium text-muted-foreground uppercase mb-2">Тип проекта</h3>
                 <p className="text-sm">{projectData.type}</p>
               </div>
               <div className="md:col-span-2">
@@ -243,8 +243,8 @@ export default function Practica2Page() {
               </ul>
             </div>
 
-            <div className="bg-indigo-50 rounded-lg p-5">
-              <h3 className="text-xs font-medium text-indigo-600 uppercase mb-3">Понятные визуальные коды</h3>
+            <div className="bg-green-50 rounded-lg p-5">
+              <h3 className="text-xs font-medium text-green-600 uppercase mb-3">Понятные визуальные коды</h3>
               <ul className="text-sm space-y-1">
                 {targetAudience.visualCodes.map((item, i) => (
                   <li key={i}>{item}</li>
@@ -261,7 +261,7 @@ export default function Practica2Page() {
           <div className="mb-10">
             <span className="text-xs font-mono text-muted-foreground">Этап 3</span>
             <h2 className="text-2xl md:text-3xl font-medium mt-1">Семиотический анализ визуальных знаков</h2>
-            <p className="text-muted-foreground mt-2">Анализ референсов рекламных баннеров</p>
+            <p className="text-muted-foreground mt-2">Анализ референсов рекламных баннеров экологических акций</p>
           </div>
 
           <div className="space-y-8">
@@ -271,7 +271,7 @@ export default function Practica2Page() {
                   <Image src={ref.src} alt={ref.alt} fill className="object-cover" />
                 </div>
                 <div className="lg:col-span-2 space-y-4">
-                  <h3 className="font-medium">Референс {i + 1}</h3>
+                  <h3 className="font-medium">Референс {i + 1}: {ref.alt.split(": ")[1]}</h3>
                   <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
                     <div>
                       <h4 className="text-xs font-medium text-muted-foreground uppercase mb-1">Иконические знаки</h4>
@@ -303,11 +303,11 @@ export default function Practica2Page() {
           </div>
 
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 mb-10">
-            <div className="bg-indigo-50 rounded-lg p-6">
+            <div className="bg-green-50 rounded-lg p-6">
               <h3 className="text-xs font-medium text-muted-foreground uppercase mb-2">Визуальная идея</h3>
               <p className="text-sm leading-relaxed">{visualConcept.idea}</p>
             </div>
-            <div className="bg-indigo-50 rounded-lg p-6">
+            <div className="bg-green-50 rounded-lg p-6">
               <h3 className="text-xs font-medium text-muted-foreground uppercase mb-2">Визуальная метафора</h3>
               <p className="text-sm leading-relaxed">{visualConcept.metaphor}</p>
             </div>
@@ -339,6 +339,14 @@ export default function Practica2Page() {
             </div>
           </div>
 
+          {/* Composition */}
+          <div className="mb-10">
+            <h3 className="text-lg font-medium mb-4">Композиция</h3>
+            <div className="bg-secondary rounded-lg p-6">
+              <p className="text-sm">{visualConcept.composition}</p>
+            </div>
+          </div>
+
           {/* Moodboards */}
           <div>
             <h3 className="text-lg font-medium mb-4">Мудборды</h3>
@@ -366,11 +374,11 @@ export default function Practica2Page() {
             <p className="text-muted-foreground mt-2">Финальная визуальная композиция</p>
           </div>
 
-          <div className="bg-gradient-to-br from-indigo-100 to-purple-50 rounded-lg p-4 md:p-8 mb-8">
+          <div className="bg-gradient-to-br from-green-100 to-teal-50 rounded-lg p-4 md:p-8 mb-8">
             <div className="aspect-video relative rounded-lg overflow-hidden shadow-xl">
               <Image 
                 src="/images/practica2/banner-main.png" 
-                alt="Рекламный баннер ZenMind" 
+                alt="Рекламный баннер ЭкоГород" 
                 fill 
                 className="object-cover"
               />
@@ -380,19 +388,19 @@ export default function Practica2Page() {
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
             <div className="bg-secondary rounded-lg p-5">
               <h3 className="text-xs font-medium text-muted-foreground uppercase mb-3">Визуальный образ</h3>
-              <p className="text-sm">Минималистичный лотос и силуэт медитирующего человека на градиентном фоне индиго-лаванда</p>
+              <p className="text-sm">Символ переработки из листьев, городской пейзаж с деревьями, летящие птицы на зелёном градиентном фоне</p>
             </div>
             <div className="bg-secondary rounded-lg p-5">
               <h3 className="text-xs font-medium text-muted-foreground uppercase mb-3">Заголовок</h3>
-              <p className="text-sm">ZenMind — название бренда + слоган о внутреннем покое</p>
+              <p className="text-sm">ЭкоГород — название инициативы + слоган о личном вкладе каждого</p>
             </div>
             <div className="bg-secondary rounded-lg p-5">
               <h3 className="text-xs font-medium text-muted-foreground uppercase mb-3">Графические элементы</h3>
-              <p className="text-sm">Световые частицы, мягкое боке, плавные градиенты</p>
+              <p className="text-sm">Природные формы, символы переработки, контейнеры, велосипед, деревья</p>
             </div>
             <div className="bg-secondary rounded-lg p-5">
               <h3 className="text-xs font-medium text-muted-foreground uppercase mb-3">Композиция</h3>
-              <p className="text-sm">Центрированная, симметричная, с визуальной иерархией от центра к краям</p>
+              <p className="text-sm">Динамичная, призывающая к действию, с чёткой визуальной иерархией</p>
             </div>
           </div>
         </div>
@@ -423,7 +431,7 @@ export default function Practica2Page() {
                     <td className="py-3 px-4 font-medium">{item.element}</td>
                     <td className="py-3 px-4">{item.description}</td>
                     <td className="py-3 px-4">{item.associations}</td>
-                    <td className="py-3 px-4 bg-indigo-50">{item.signType}</td>
+                    <td className="py-3 px-4 text-muted-foreground">{item.signType}</td>
                   </tr>
                 ))}
               </tbody>
@@ -432,49 +440,41 @@ export default function Practica2Page() {
         </div>
       </section>
 
-      {/* Stage 7: Conclusion */}
-      <section id="stage7" className="py-16 px-4 border-b border-border">
-        <div className="max-w-6xl mx-auto">
-          <div className="mb-10">
-            <span className="text-xs font-mono text-muted-foreground">Этап 7</span>
-            <h2 className="text-2xl md:text-3xl font-medium mt-1">Заключение</h2>
-            <p className="text-muted-foreground mt-2">Выводы по проделанной работе</p>
-          </div>
-
-          <div className="bg-gradient-to-br from-indigo-50 to-purple-50 rounded-lg p-6 md:p-8">
-            <div className="prose prose-sm max-w-none">
-              <p className="text-sm leading-relaxed mb-4">
-                В ходе выполнения практической работы был разработан рекламный баннер для мобильного приложения 
-                медитации <strong>ZenMind</strong>. Работа включала полный цикл создания визуальной коммуникации: 
-                от анализа целевой аудитории до семиотического обоснования выбранных визуальных решений.
-              </p>
-              <p className="text-sm leading-relaxed mb-4">
-                <strong>Основные визуальные коды</strong>, использованные в баннере:
-              </p>
-              <ul className="text-sm space-y-2 mb-4">
-                <li><strong>Иконические знаки:</strong> силуэт медитирующего человека, цветок лотоса — прямое изображение объекта рекламы</li>
-                <li><strong>Индексальные знаки:</strong> градиент от тёмного к светлому, световые частицы — указание на процесс трансформации состояния</li>
-                <li><strong>Символические знаки:</strong> лотос как символ духовного роста, индиго как цвет мудрости, название ZenMind</li>
-              </ul>
-              <p className="text-sm leading-relaxed mb-4">
-                <strong>Цветовая палитра</strong> (индиго, лаванда, мятный) была выбрана на основе психологии цвета 
-                и соответствует ожиданиям целевой аудитории: спокойствие, премиальность, технологичность.
-              </p>
-              <p className="text-sm leading-relaxed">
-                Разработанный баннер эффективно транслирует ключевое сообщение бренда через комплексное 
-                использование визуальных кодов, понятных целевой аудитории, и создаёт эмоциональную 
-                связь с потенциальными пользователями приложения.
-              </p>
-            </div>
+      {/* Conclusion */}
+      <section id="conclusion" className="py-16 px-4">
+        <div className="max-w-4xl mx-auto text-center">
+          <span className="text-xs font-mono text-muted-foreground">Заключение</span>
+          <h2 className="text-2xl md:text-3xl font-medium mt-2 mb-6">Выводы</h2>
+          <div className="bg-green-50 rounded-lg p-6 md:p-8 text-left">
+            <p className="text-sm leading-relaxed mb-4">
+              В ходе работы был разработан рекламный баннер для городской экологической акции «ЭкоГород», 
+              направленной на привлечение жителей к раздельному сбору отходов и озеленению города.
+            </p>
+            <p className="text-sm leading-relaxed mb-4">
+              Анализ референсов экологических кампаний показал эффективность использования:
+            </p>
+            <ul className="text-sm leading-relaxed mb-4 list-disc list-inside space-y-1">
+              <li>Зелёной цветовой гаммы как универсального кода экологичности</li>
+              <li>Символа переработки в различных интерпретациях</li>
+              <li>Природных образов (деревья, листья, птицы) для создания эмоциональной связи</li>
+              <li>Призывов к действию и акцента на личном вкладе каждого</li>
+            </ul>
+            <p className="text-sm leading-relaxed">
+              Созданный баннер использует семиотические коды, понятные целевой аудитории: 
+              символический знак переработки, иконические изображения природы и города, 
+              индексальные указатели на результат экологических действий. 
+              Визуальная концепция формирует позитивный образ экологической инициативы 
+              и мотивирует к участию.
+            </p>
           </div>
         </div>
       </section>
 
       {/* Footer */}
-      <footer className="py-8 px-4">
-        <div className="max-w-6xl mx-auto flex flex-col md:flex-row justify-between items-center gap-2 text-sm text-muted-foreground">
-          <p>Практическая работа №2: Визуальные коды в рекламной коммуникации</p>
-          <p>Тема: Приложение для медитации ZenMind</p>
+      <footer className="py-8 px-4 border-t border-border">
+        <div className="max-w-6xl mx-auto text-center text-sm text-muted-foreground">
+          <p>Практическая работа №2 — Визуальные коды и символы в рекламной коммуникации</p>
+          <p className="mt-1">Тема: Экологическая акция «ЭкоГород»</p>
         </div>
       </footer>
     </main>
