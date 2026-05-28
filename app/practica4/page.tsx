@@ -185,7 +185,7 @@ const noiseCorrections = [
   },
   {
     title: "Снижение плотности информации",
-    note: "На одной панели — только релевантные направления; второстепенное убрано или вынесено на схему.",
+    note: "��а одной панели — только релевантные направления; второстепенное убрано или вынесено на схему.",
   },
   {
     title: "Единый ритм и сетка",
@@ -559,14 +559,14 @@ export default function Practica4Page() {
           <h3 className="text-sm font-medium mb-4">Размещение элементов на фотографии пространства</h3>
           <div className="relative rounded-lg overflow-hidden border border-teal-100 shadow-sm">
             <Image
-              src="/images/practica4/metro-after.png"
-              alt="Фотомонтаж: элементы навигационной системы, размещённые в пространстве станции"
+              src="/images/practica4/metro-before.png"
+              alt="Фотомонтаж: элементы навигационной системы из Этапа 5, размещённые на реальной фотографии станции"
               width={1280}
               height={720}
               className="w-full h-auto"
             />
             {/* затемнение для читаемости наложенных элементов */}
-            <div className="absolute inset-0 bg-gradient-to-b from-black/30 via-transparent to-black/40" aria-hidden="true" />
+            <div className="absolute inset-0 bg-gradient-to-b from-black/40 via-black/10 to-black/45" aria-hidden="true" />
 
             {/* Подвесной путевой указатель — сверху */}
             <div className="absolute top-3 left-1/2 -translate-x-1/2 w-[min(92%,520px)] bg-teal-700/95 backdrop-blur-sm text-white rounded-md shadow-xl overflow-hidden">
@@ -578,9 +578,17 @@ export default function Practica4Page() {
                   Платформа <ArrowRight className="w-4 h-4" />
                 </span>
               </div>
-              <div className="flex items-center justify-between gap-3 px-4 py-2.5">
+              <div className="flex items-center justify-between gap-3 px-4 py-2.5 border-b border-white/15">
                 <span className="flex items-center gap-2 text-sm md:text-base font-medium">
                   <ArrowUpDown className="w-5 h-5" /> Пересадка · Линия 2
+                </span>
+                <span className="flex items-center gap-1.5 text-teal-50/80 text-sm font-medium">
+                  <ArrowRight className="w-4 h-4" />
+                </span>
+              </div>
+              <div className="flex items-center justify-between gap-3 px-4 py-2.5">
+                <span className="flex items-center gap-2 text-sm md:text-base font-medium">
+                  <Accessibility className="w-5 h-5" /> Лифт · Выход №3
                 </span>
                 <span className="flex items-center gap-1.5 text-teal-50/80 text-sm font-medium">
                   <ArrowRight className="w-4 h-4" />
