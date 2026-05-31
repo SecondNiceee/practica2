@@ -497,8 +497,19 @@ export default function Practica4Page() {
                 </span>
               </div>
               <p className="text-sm text-teal-950/60 mt-2">
-                Единая навигация, спокойный фон, цветовое кодирование и световые акценты.
+                Единая система знаков для всех точек маршрута: спокойный фон, цветовое кодирование и
+                световые акценты.
               </p>
+              <div className="flex flex-wrap gap-2 mt-3">
+                {["Вход", "Ориентация", "Движение", "Пребывание", "Выход"].map((label) => (
+                  <span
+                    key={label}
+                    className="px-2.5 py-1 bg-teal-50 text-teal-800 text-xs font-medium rounded-full border border-teal-100"
+                  >
+                    {label}
+                  </span>
+                ))}
+              </div>
             </div>
           </div>
 
