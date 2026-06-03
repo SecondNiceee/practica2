@@ -569,6 +569,19 @@ export default function Practica4Page() {
         </div>
       </section>
 
+      {/* Навигация к следующей практике */}
+      <section className="py-10 px-4 border-t border-teal-100">
+        <div className="max-w-6xl mx-auto text-center">
+          <a 
+            href="/practica5" 
+            className="inline-flex items-center gap-2 px-6 py-3 bg-teal-700 text-white rounded-full font-medium hover:bg-teal-800 transition-colors"
+          >
+            Продолжение: Практика №5 — Визуализация в среде
+            <ArrowRight className="w-4 h-4" />
+          </a>
+        </div>
+      </section>
+
       {/* Footer */}
       <footer className="py-8 px-4 border-t border-teal-100">
         <div className="max-w-6xl mx-auto text-center text-sm text-teal-950/60">
